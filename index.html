@@ -620,11 +620,11 @@ function MapContact() {
       scrollWheelZoom: false,
       attributionControl: false,
     });
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-      subdomains: 'abcd',
-      maxZoom: 14,
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      subdomains: 'abc',
+      maxZoom: 19,
     }).addTo(map);
-    L.control.attribution({ prefix: '© <a href="https://osm.org/copyright">OSM</a> © <a href="https://carto.com/">CARTO</a>' }).addTo(map);
+    L.control.attribution({ prefix: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).addTo(map);
     mapInstanceRef.current = map;
     L.circle(COVERAGE_CENTER, { radius: COVERAGE_RADIUS, ...CIRCLE_STYLE }).addTo(map);
     L.marker(COVERAGE_CENTER, { icon: makeCenterDot() }).addTo(map);
